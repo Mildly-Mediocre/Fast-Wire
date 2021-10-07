@@ -1,0 +1,36 @@
+{% extends "maintemplate.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block main %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload the Aircraft Wire File</h1>
+      <h4>This should be the folder containing all .csv files</h4>
+      <hr>
+
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label>Select file</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="wirefile" id="wirefile">
+            <label class="custom-file-label" for="image">Select file...</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+
+      </form>
+      <hr>
+      <img src="{{ url_for('static', filename='img/wire1.jpg') }}" alt="">
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
